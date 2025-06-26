@@ -1,21 +1,31 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./Global/Header.jsx"
+import HomePage from "./HomePage/Body.jsx";
+import ListingsPage from "./ListingsPage/Body.jsx";
+import ListingDetailPage from "./ListingDetailPage/Body.jsx";
+import AboutUsPage from "./AboutUsPage/Body.jsx";
+import ContactUsPage from "./ContactUsPage/Body.jsx";
+import LoginPage from "./LoginPage/Body.jsx";
+import RegisterPage from "./RegisterPage/Body.jsx";
+import DashboardPage from "./DashboardPage/Body.jsx";
 
 const Body = () => {
-  useEffect(() => {
-    const interval = setInterval(() => {
-      window.location.reload();
-    }, 4000); // refresh every 4 seconds
-
-    return () => clearInterval(interval); // cleanup on unmount
-  }, []);
-
-  return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
-      <div className="text-xl font-semibold text-gray-700 bg-white px-6 py-4 rounded shadow">
-        Loading Preview...
-      </div>
-    </div>
-  );
+    return (
+        <Router>
+        <Header />
+            <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/listingspage" element={<ListingsPage />} />
+        <Route path="/listingdetailpage" element={<ListingDetailPage />} />
+        <Route path="/aboutuspage" element={<AboutUsPage />} />
+        <Route path="/contactuspage" element={<ContactUsPage />} />
+        <Route path="/loginpage" element={<LoginPage />} />
+        <Route path="/registerpage" element={<RegisterPage />} />
+        <Route path="/dashboardpage" element={<DashboardPage />} />
+            </Routes>
+        </Router>
+    );
 };
 
 export default Body;
