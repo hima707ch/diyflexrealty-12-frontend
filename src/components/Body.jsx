@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./Global/Header.jsx"
-import HomePage from "./HomePage/Body.jsx";
 import ListingsPage from "./ListingsPage/Body.jsx";
 import ListingDetailPage from "./ListingDetailPage/Body.jsx";
 import AboutUsPage from "./AboutUsPage/Body.jsx";
